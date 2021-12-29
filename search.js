@@ -1,0 +1,14 @@
+$(document).ready(function(){
+    $("#search").keypress(function(){
+        $.ajax({
+            type:'POST',
+            url:'dashboard.php',
+            data:{
+                name:$($search).val(),
+            },
+            success:function(data){
+                $("#card").html(data);
+            }
+        });
+    });
+});
